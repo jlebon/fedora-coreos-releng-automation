@@ -1,9 +1,16 @@
 [git]
-author.name = 'CoreOS Bot'
-author.email = 'coreos@lists.fedoraproject.org'
-github.repo.owner = 'coreos'
+# XXX
+#author.name = 'CoreOS Bot'
+#author.email = 'coreos@lists.fedoraproject.org'
+author.name = 'Jonathan Lebon'
+author.email = 'jonathan@jlebon.com'
+# XXX
+#github.repo.owner = 'coreos'
+github.repo.owner = 'jlebon'
 github.repo.name = 'fedora-coreos-config'
-github.username = 'coreosbot'
+# XXX
+#github.username = 'coreosbot'
+github.token.username = 'papr-bot'
 github.token.path = '/var/run/secrets/coreos.fedoraproject.org/github-token/token'
 
 [sync-build-lockfiles]
@@ -12,14 +19,18 @@ streams = [
     'bodhi-updates',
 ]
 trigger.mode = 'periodic'
-trigger.period = '15m'
+# XXX
+#trigger.period = '15m'
+trigger.period = '15s'
 method = 'push'
 
 [promote-lockfiles]
 source-ref = 'bodhi-updates'
 target-ref = 'testing-devel'
 trigger.mode = 'periodic'
-trigger.period = '24h'
+# XXX
+#trigger.period = '24h'
+trigger.period = '15s'
 method = 'push'
 
 [propagate-files]
@@ -32,5 +43,7 @@ skip-files = [
     'manifest-lock.*',
 ]
 trigger.mode = 'periodic'
-trigger.period = '15m'
+# XXX
+#trigger.period = '15m'
+trigger.period = '15s'
 method = 'push'
